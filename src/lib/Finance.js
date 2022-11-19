@@ -6,6 +6,11 @@ class Finance {
     this.http = createHttp(timeout ? { timeout } : {});
   }
 
+  /**
+   * Returns information about real estate funds or companies
+   * @param {*} code Real estate fund or company code
+   * @returns Real estate fund or company information
+   */
   async getStockPrice(code) {
     const { http, key } = this;
     const { data } = await http.get(
@@ -14,6 +19,10 @@ class Finance {
     return data;
   }
 
+  /**
+   * Returns currency and stock exchange information
+   * @returns Currency and stock exchange information
+   */
   async getCurrenciesAndStocks() {
     const { http, key } = this;
     const { data } = await http.get(`/finance?key=${key}`);

@@ -1,13 +1,13 @@
 const Finance = require("../lib/Finance");
 
-describe("Testando módulo financeiro", () => {
+describe("Financial module tests", () => {
   let finance = null;
 
   beforeAll(() => {
     finance = new Finance({ key: "your key" });
   });
 
-  it("Deve retornar as informações de um fundo imobiliário", async () => {
+  it("Should return information from a real estate fund", async () => {
     const code = "KNRI11";
     const spy = jest.spyOn(finance, "getStockPrice");
     spy.mockReturnValue(
@@ -68,7 +68,7 @@ describe("Testando módulo financeiro", () => {
     ]);
   });
 
-  it("Deve retornar as informações de moeda e do mercado financeiro", async () => {
+  it("Should return currency and financial market information", async () => {
     const spy = jest.spyOn(finance, "getCurrenciesAndStocks");
     spy.mockReturnValue(
       Promise.resolve({

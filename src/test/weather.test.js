@@ -1,13 +1,13 @@
 const Weather = require("../lib/Weather");
 
-describe("Testando módulo de tempo", () => {
+describe("Weather module tests", () => {
   let weather = null;
 
   beforeAll(() => {
     weather = new Weather({ key: "your key" });
   });
 
-  it("Deve retornar as informações de tempo", async () => {
+  it("Should return weather information", async () => {
     const response = await weather.getWeather();
 
     expect(Object.keys(response)).toEqual([
@@ -42,7 +42,7 @@ describe("Testando módulo de tempo", () => {
     ]);
   });
 
-  it("Deve retornar as informações de tempo informando um código específico da cidade", async () => {
+  it("Must return weather information by entering a specific city code", async () => {
     const response = await weather.getWeather("455827");
 
     expect(Object.keys(response)).toEqual([
