@@ -1,4 +1,4 @@
-# HG JS
+# HG Brasil JS
 
 Biblioteca minimalista que encapsula chamadas da API HG Brasil (https://hgbrasil.com/)
 

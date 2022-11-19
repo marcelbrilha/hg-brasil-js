@@ -1,5 +1,5 @@
 {
-  "name": "hg-js",
+  "name": "hg-brasil-js",
   "version": "1.0.0",
   "description": "Biblioteca para encapsular chamadas da API HG Brasil",
   "main": "index.js",
