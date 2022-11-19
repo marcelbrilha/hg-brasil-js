@@ -12,28 +12,29 @@ describe("Financial module tests", () => {
     const spy = jest.spyOn(finance, "getStockPrice");
     spy.mockReturnValue(
       Promise.resolve({
-        by: "teste",
-        valid_key: "teste",
+        by: "default",
+        valid_key: true,
         results: {
           [code]: {
-            kind: "teste",
+            kind: "fii",
             symbol: code,
-            name: "teste",
-            company_name: "teste",
-            document: "teste",
-            description: "teste",
-            website: "teste",
-            region: "teste",
-            currency: "teste",
-            market_time: "teste",
-            market_cap: "teste",
-            price: "teste",
-            change_percent: "teste",
-            updated_at: "teste",
+            name: "FII Kinea",
+            company_name:
+              "Kinea Renda Imobiliria Fundo Investimento Imobiliario FII",
+            document: "12.005.956/0001-65",
+            description: "Financeiro e Outros/Fundos/Fundos Imobiliários",
+            website: "https://www.intrag.com.br/",
+            region: "Brazil/Sao Paulo",
+            currency: "BRL",
+            market_time: {},
+            market_cap: 3388.52,
+            price: 140.27,
+            change_percent: 2.69,
+            updated_at: "2022-11-18 20:54:43",
           },
         },
-        execution_time: "teste",
-        from_cache: "teste",
+        execution_time: 0.0,
+        from_cache: true,
       })
     );
 
@@ -72,11 +73,11 @@ describe("Financial module tests", () => {
     const spy = jest.spyOn(finance, "getCurrenciesAndStocks");
     spy.mockReturnValue(
       Promise.resolve({
-        by: "teste",
-        valid_key: "teste",
-        results: "teste",
-        execution_time: "teste",
-        from_cache: "teste",
+        by: "default",
+        valid_key: true,
+        results: {},
+        execution_time: 0.0,
+        from_cache: true,
       })
     );
 
@@ -89,6 +90,48 @@ describe("Financial module tests", () => {
       "results",
       "execution_time",
       "from_cache",
+    ]);
+  });
+
+  it("Should return rate information (CDI, IPCA, SELIC)", async () => {
+    const spy = jest.spyOn(finance, "getTaxes");
+    spy.mockReturnValue(
+      Promise.resolve({
+        by: "current",
+        valid_key: true,
+        results: [
+          {
+            date: "2022-11-17",
+            cdi: 13.75,
+            selic: 13.75,
+            daily_factor: 1.00050788,
+            selic_daily: 13.65,
+            cdi_daily: 13.65,
+          },
+        ],
+        execution_time: 0,
+        from_cache: true,
+      })
+    );
+
+    const response = await finance.getTaxes();
+    const [firstTax] = response["results"];
+
+    expect(Object.keys(response)).toEqual([
+      "by",
+      "valid_key",
+      "results",
+      "execution_time",
+      "from_cache",
+    ]);
+
+    expect(Object.keys(firstTax)).toEqual([
+      "date",
+      "cdi",
+      "selic",
+      "daily_factor",
+      "selic_daily",
+      "cdi_daily",
     ]);
   });
 });

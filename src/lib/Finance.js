@@ -28,6 +28,16 @@ class Finance {
     const { data } = await http.get(`/finance?key=${key}`);
     return data;
   }
+
+  /**
+   * Return rate information (CDI, IPCA, SELIC)
+   * @returns Rate information (CDI, IPCA, SELIC)
+   */
+  async getTaxes() {
+    const { http, key } = this;
+    const { data } = await http.get(`/finance/taxes?key=${key}`);
+    return data;
+  }
 }
 
 module.exports = Finance;
