@@ -38,6 +38,6 @@ jobs:
     - run: npm test
     
     - name: Scan vulnerabilities with Snyk
-      uses: snyk/actions@0.3.0
+      uses: eeveebank/github-actions-snyk@1.0.6
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
