@@ -36,8 +36,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm test
-    
-    - name: Scan vulnerabilities with Snyk
-      uses: eeveebank/github-actions-snyk@1.0.6
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
