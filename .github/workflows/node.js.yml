@@ -39,6 +39,8 @@ jobs:
     
     - name: Scan vulnerabilities with Snyk
       uses: eeveebank/github-actions-snyk@1.0.6
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     
     - name: Scan vulnerabilities with Horusec
       uses: fike/horusec-action@v0.2.2
