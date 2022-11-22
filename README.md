@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://hgbrasil.com/assets/hg-br-logo-29abe59800e509879c6b79ff8861370119567f923c815595f7d19dff4986d786.png">
-</p>
-
 # HG Brasil JS
 
 Biblioteca minimalista que encapsula chamadas da API HG Brasil (https://hgbrasil.com/)
