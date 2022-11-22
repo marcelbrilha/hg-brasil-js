@@ -1,3 +1,3 @@
 const URL = "https://api.hgbrasil.com";
 
-module.exports = URL;
+export default URL;

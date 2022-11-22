@@ -1,4 +1,4 @@
-const Weather = require("../lib/Weather");
+import Weather from "../lib/Weather";
 
 describe("Weather module tests", () => {
   let weather = null;

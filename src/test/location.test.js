@@ -1,4 +1,4 @@
-const Location = require("../lib/Location");
+import Location from "../lib/Location";
 
 describe("Location module tests", () => {
   let location = null;

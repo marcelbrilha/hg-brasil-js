@@ -1,5 +1,5 @@
-const Finance = require("./src/lib/Finance");
-const Weather = require("./src/lib/Weather");
-const Location = require("./src/lib/Location");
+import Finance from "./src/lib/Finance";
+import Weather from "./src/lib/Weather";
+import Location from "./src/lib/Location";
 
-module.exports = { Finance, Weather, Location };
+export default { Finance, Weather, Location };

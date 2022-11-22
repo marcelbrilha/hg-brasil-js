@@ -1,4 +1,4 @@
-const createHttp = require("../config/api");
+import createHttp from "../config/api";
 
 class Location {
   constructor({ key, timeout }) {
@@ -21,4 +21,4 @@ class Location {
   }
 }
 
-module.exports = Location;
+export default Location;

@@ -1,4 +1,4 @@
-const createHttp = require("../config/api");
+import createHttp from "../config/api";
 
 class Finance {
   constructor({ key, timeout }) {
@@ -40,4 +40,4 @@ class Finance {
   }
 }
 
-module.exports = Finance;
+export default Finance;

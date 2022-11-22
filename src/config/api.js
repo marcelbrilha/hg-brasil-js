@@ -1,8 +1,8 @@
-const axios = require("axios");
+import axios from "axios";
 
-const baseURL = require("./config");
+import baseURL from "./config";
 
-module.exports = function createHttp({ timeout = 10000 }) {
+export default function createHttp({ timeout = 10000 }) {
   const http = axios.create({ baseURL, timeout });
   return http;
-};
+}

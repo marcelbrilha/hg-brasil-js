@@ -1,4 +1,4 @@
-const Finance = require("../lib/Finance");
+import Finance from "../lib/Finance";
 
 describe("Financial module tests", () => {
   let finance = null;

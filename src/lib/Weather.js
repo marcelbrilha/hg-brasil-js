@@ -1,4 +1,4 @@
-const createHttp = require("../config/api");
+import createHttp from "../config/api";
 
 class Weather {
   constructor({ key, timeout }) {
@@ -28,4 +28,4 @@ class Weather {
   }
 }
 
-module.exports = Weather;
+export default Weather;
