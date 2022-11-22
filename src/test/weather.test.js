@@ -43,7 +43,7 @@ describe("Weather module tests", () => {
   });
 
   it("Must return weather information by entering a specific city code", async () => {
-    const response = await weather.getWeather("455827");
+    const response = await weather.getWeatherWithCode("455827");
 
     expect(Object.keys(response)).toEqual([
       "by",
