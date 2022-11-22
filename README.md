@@ -20,9 +20,9 @@ Biblioteca minimalista que encapsula chamadas da API HG Brasil (https://hgbrasil
 import { Finance, Weather, Location } from "hg-brasil-js";
 
 async function main() {
-  const finance = new Finance({ key: "Your Key" });
-  const weather = new Weather({ key: "Your Key" });
-  const location = new Location({ key: "Your Key" });
+  const finance = new Finance({ key: "your key" });
+  const weather = new Weather({ key: "your key" });
+  const location = new Location({ key: "your key" });
 
   const taxes = await finance.getTaxes();
   const weatherInfo = await weather.getWeather();
