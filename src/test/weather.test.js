@@ -8,6 +8,38 @@ describe("Weather module tests", () => {
   });
 
   it("Should return weather information", async () => {
+    const spy = jest.spyOn(weather, "getWeather");
+    spy.mockReturnValue(
+      Promise.resolve({
+        by: "default",
+        valid_key: false,
+        results: {
+          temp: 27,
+          date: "22/11/2022",
+          time: "16:25",
+          condition_code: "4",
+          description: "Tempestades",
+          currently: "dia",
+          cid: "",
+          city: "São Paulo, SP",
+          img_id: "4",
+          humidity: 62,
+          cloudiness: 40.0,
+          rain: 3.65,
+          wind_speedy: "8.23 km/h",
+          wind_direction: 190,
+          sunrise: "05:12 am",
+          sunset: "06:33 pm",
+          condition_slug: "storm",
+          city_name: "São Paulo",
+          forecast: [],
+          cref: "e54006",
+        },
+        execution_time: 0.0,
+        from_cache: true,
+      })
+    );
+
     const response = await weather.getWeather();
 
     expect(Object.keys(response)).toEqual([
@@ -43,6 +75,38 @@ describe("Weather module tests", () => {
   });
 
   it("Must return weather information by entering a specific city code", async () => {
+    const spy = jest.spyOn(weather, "getWeatherWithCode");
+    spy.mockReturnValue(
+      Promise.resolve({
+        by: "default",
+        valid_key: false,
+        results: {
+          temp: 27,
+          date: "22/11/2022",
+          time: "16:25",
+          condition_code: "4",
+          description: "Tempestades",
+          currently: "dia",
+          cid: "",
+          city: "São Paulo, SP",
+          img_id: "4",
+          humidity: 62,
+          cloudiness: 40.0,
+          rain: 3.65,
+          wind_speedy: "8.23 km/h",
+          wind_direction: 190,
+          sunrise: "05:12 am",
+          sunset: "06:33 pm",
+          condition_slug: "storm",
+          city_name: "São Paulo",
+          forecast: [],
+          cref: "e54006",
+        },
+        execution_time: 0.0,
+        from_cache: true,
+      })
+    );
+
     const response = await weather.getWeatherWithCode("455827");
 
     expect(Object.keys(response)).toEqual([
