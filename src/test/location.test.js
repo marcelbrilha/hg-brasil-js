@@ -1,4 +1,4 @@
-import Location from "../lib/Location";
+import Location from "../lib/Location.js";
 
 describe("Location module tests", () => {
   let location = null;

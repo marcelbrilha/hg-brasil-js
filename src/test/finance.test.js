@@ -1,4 +1,4 @@
-import Finance from "../lib/Finance";
+import Finance from "../lib/Finance.js";
 
 describe("Financial module tests", () => {
   let finance = null;

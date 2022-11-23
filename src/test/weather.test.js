@@ -1,4 +1,4 @@
-import Weather from "../lib/Weather";
+import Weather from "../lib/Weather.js";
 
 describe("Weather module tests", () => {
   let weather = null;

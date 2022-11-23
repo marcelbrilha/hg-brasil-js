@@ -1,4 +1,4 @@
-import createHttp from "../config/api";
+import createHttp from "../config/api.js";
 
 class Location {
   constructor({ key, timeout }) {
