@@ -4,11 +4,12 @@ Biblioteca minimalista que encapsula chamadas da API HG Brasil (https://hgbrasil
 
 ## Comandos importantes
 
-| Descrição             | Comando      |
-| --------------------- | ------------ |
-| Instalar dependências | npm install  |
-| Verificar código      | npm run lint |
-| Executar os testes    | npm run test |
+| Descrição             | Comando        |
+| --------------------- | -------------- |
+| Instalar dependências | npm install    |
+| Verificar código      | npm run lint   |
+| Executar os testes    | npm run test   |
+| Realizar commit       | npm run commit |
 
 ## Como utilizar
 
