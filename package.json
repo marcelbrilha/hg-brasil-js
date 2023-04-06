@@ -47,7 +47,6 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "npm test",
       "git add"
     ]
   },
@@ -55,11 +54,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "jest": {
-    "testMatch": [
-      "**/src/test/**/*.test.js"
-    ]
   },
   "files": [
     "dist"
