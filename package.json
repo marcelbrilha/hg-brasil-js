@@ -2,14 +2,17 @@
   "name": "hg-brasil-js",
   "version": "1.0.0",
   "description": "Biblioteca para encapsular chamadas da API HG Brasil",
-  "main": "index.js",
-  "type": "module",
+  "main": "dist/hg-brasil.min.js",
+  "browser": "dist/hg-brasil-browser.min.js",
   "author": "Marcel Brilha",
   "license": "MIT",
   "scripts": {
     "lint": "npx eslint src/**/*.js",
     "test": "jest",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build-browser": "rollup -c && uglifyjs dist/hg-brasil-browser.js -cm -o dist/hg-brasil-browser.min.js",
+    "build-node": "rollup -c && uglifyjs dist/hg-brasil.js -cm -o dist/hg-brasil.min.js",
+    "build": "npm run build-browser && npm run build-node"
   },
   "keywords": [
     "HG library",
@@ -28,7 +31,12 @@
     "eslint": "^8.28.0",
     "husky": "^4.2.5",
     "jest": "^29.3.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "rollup": "^2.23.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "uglify-js": "^3.10.1"
   },
   "husky": {
     "hooks": {
@@ -47,5 +55,13 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "jest": {
+    "testMatch": [
+      "**/src/test/**/*.test.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ]
 }

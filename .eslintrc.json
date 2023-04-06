@@ -10,5 +10,6 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {},
+  "ignorePatterns": ["dist/"]
 }
